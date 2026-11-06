@@ -13,14 +13,12 @@ const data = await sql`
  	return data;
  }
 
+
 export async function GET() {
-  return Response.json({
-    message:
-      'Uncomment this file and removegit add . this line. You can delete this file when you are finished.',
-  });
-  // try {
-  // 	return Response.json(await listInvoices());
-  // } catch (error) {
-  // 	return Response.json({ error }, { status: 500 });
-  // }
+  try {
+    return Response.json(await listInvoices());
+  } catch (error) {
+    return Response.json({ error }, { status: 500 });
+  }
 }
+
